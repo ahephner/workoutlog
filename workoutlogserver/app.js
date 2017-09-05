@@ -2,7 +2,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var sequelize = require('./db.js');
-var User=sequelize.import('./models/user.js');
+var User=sequelize.import(__dirname + '//models/user.js');
+
+
 
 
 User.sync();/* this will drop (delete) the user table
