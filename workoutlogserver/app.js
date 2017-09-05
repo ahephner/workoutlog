@@ -4,11 +4,6 @@ var bodyParser = require('body-parser');
 
 app.use(require('./middleware/headers'));
 
-
-app.use('/api/test', function(req, res){
-	res.send("Hello World");
-});
-
 app.use('/api/test', function(req, res){
 	res.send("Hello World");
 });
@@ -16,6 +11,11 @@ app.use('/api/test', function(req, res){
 app.listen(3000, function(){
 	console.log('App is listening on 3000.')
 });
+
+
+
+
+
 
 
 var Sequelize = require('sequelize');
@@ -41,11 +41,13 @@ var User = sequelize.define('user', {
 	username: Sequelize.STRING,
 	passwordhash: Sequelize.STRING,
 });
-//creates the table in postgress
-//matches the model we defined
-//Doesnt drop the db
+
 User.sync();
-//User({force:true}); //drops the table compeletyl
+
+/* this will drop (delete) the user table
+User.sync({force:true});
+
+*/
 app.use(bodyParser.json());
 
 app.post('/api/user', function(req, res) {
@@ -72,4 +74,5 @@ app.post('/api/user', function(req, res) {
 			}
 		);
 	});
+
 
