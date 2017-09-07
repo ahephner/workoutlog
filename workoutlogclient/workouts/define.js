@@ -26,7 +26,7 @@ $(function() {
 		  fetchAll: function() {
 			 var fetchDefs = $.ajax({
 		         type: "GET",
-		         url: WorkoutLog.API_BASE + "definition",
+		         url: WorkoutLog.API_B + "definition",
 		         headers: {
 		         	"authorization": window.localStorage.getItem("sessionToken")
 		         }

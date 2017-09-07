@@ -1,6 +1,6 @@
 	$(function(){
 		var WorkoutLog = (function($, undefined){
-			var API_Base = "http://localhost:3000/api/";
+			var API_BASE = "http://localhost:3000/api/";
 			var userDefinitions = [];
 
 			var setAuthHeader = function(sessionToken){
@@ -16,7 +16,7 @@
 			};
 				//public
 				return {
-					API_Base: API_Base, 
+					API_BASE: API_BASE, 
 					setAuthHeader: setAuthHeader
 				};
 
