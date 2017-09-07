@@ -27,9 +27,14 @@ $(function() {
                }
                $("#signup-modal").modal("hide");
                $(".disabled").removeClass("disabled");
-             //  $("#loginout").text("Logout");
+              $("#loginout").text("Logout");
                // go to define tab
-               //$('.nav-tabs a[href="#define"]').tab('show');
+               $('.nav-tabs a[href="#define"]').tab('show');
+
+               $("#su_username").val("");
+               $("#su_password").val("");
+               //routing
+               $('a[href="#define"]').tab('show');
             })
             .fail(function() {
                $("#su_error").text("There was an issue with your username").show();
@@ -58,6 +63,10 @@ $(function() {
             $("#login-modal").modal("hide");
             $(".disabled").removeClass("disabled");
             $("#loginout").text("Logout");
+
+            $("#li_username").val("");
+            $("#li_password").val("");
+            $('a[href="#define"]').tab("show");
          })
          .fail(function() {
             $("#li_error").text("There was an issue with your username or password").show();
