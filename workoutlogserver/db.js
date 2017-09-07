@@ -18,4 +18,6 @@ sequelize.authenticate().then(
 
 var User=sequelize.import('./models/user');
 
-module.exports = sequelize; 
+module.exports = sequelize; //allows this file to be exported so other files that require it can use it. 
+
+//this page deals with working with the datatbase
