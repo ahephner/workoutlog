@@ -19,8 +19,10 @@ $(function() {
             signup.done(function(data) {
                if (data.sessionToken) {
                   WorkoutLog.setAuthHeader(data.sessionToken);
-                  console.log("You made it!");
-                  console.log(data.sessionToken);
+                  // console.log("You made it!");
+                  // console.log(data.sessionToken);
+                  WorkoutLog.definition.fetchAll();
+                  WorkoutLog.log.fetchAll();
                   
                }
                $("#signup-modal").modal("hide");
@@ -49,7 +51,8 @@ $(function() {
          login.done(function(data) {
             if (data.sessionToken) {
                WorkoutLog.setAuthHeader(data.sessionToken);
-               
+               WorkoutLog.definition.fetchAll();
+               WorkoutLog.log.fetchAll();
             }
             // TODO: add logic to set user and auth token   
             $("#login-modal").modal("hide");
