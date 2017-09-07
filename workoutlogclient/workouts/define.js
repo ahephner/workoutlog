@@ -19,6 +19,7 @@ $(function() {
 		      	});
 
 		      	define.done(function(data) {
+		      		console.log(data)
 	      			WorkoutLog.definition.userDefinitions.push(data.definition);
 		      	});
 		  },
@@ -26,7 +27,7 @@ $(function() {
 		  fetchAll: function() {
 			 var fetchDefs = $.ajax({
 		         type: "GET",
-		         url: WorkoutLog.API_B + "definition",
+		         url: WorkoutLog.API_BASE + "definition",
 		         headers: {
 		         	"authorization": window.localStorage.getItem("sessionToken")
 		         }
