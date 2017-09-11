@@ -33,7 +33,7 @@ router.post('/', function(req, res) {
 router.get('/', function(req, res) {
 	var userid = req.user.id;
 	Log
-	.findAll({
+	.findAll({						//.findall is a sequelize query 
 		where: { owner: userid }
 	})
 	.then(
@@ -68,7 +68,7 @@ router.get('/:id', function(req, res) {
 
 //This will return the data from the log that was updated
 router.put('/', function(req, res) {
-    var description = req.body.log.desc;
+    var description = req.body.log.description;
     var result = req.body.log.result; 
     var data = req.body.log.id;
     var definition = req.body.log.def;
@@ -98,6 +98,7 @@ router.delete('/', function(req, res) {
 	var data = req.body.log.id;
 	Log
 		.destroy({
+			//where do you want to destroy  id is defined above data = req.body.log.id
 			where: { id: data }
 		}).then(
 			function deleteLogSuccess(data){

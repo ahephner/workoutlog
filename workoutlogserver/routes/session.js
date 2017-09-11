@@ -34,4 +34,4 @@ module.exports = router;  //allows this file to be exported to be used in other 
 
 //this file checks username and password submited vs. stored on database and if good assigns tokens
 
-//lines 1-5 set variables need for 
+//check for user name check for password send a response  

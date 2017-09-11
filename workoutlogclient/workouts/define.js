@@ -1,4 +1,5 @@
 $(function() {
+//the .extend(WorkoutLog, ) is allowing us to add additional features to the Workoutlog we defined in app.js we can use one page but for our brain sake its best to split up funcitions into different pages. 
 	$.extend(WorkoutLog, {
 		definition: {
 			userDefinitions: [],
@@ -6,7 +7,7 @@ $(function() {
 			create: function() {
 
 				var def = { 
-		         		desc: $("#def-description").val(),
+		         		desc: $("#def-description").val(),  //the .val(), allows to grab the input on the page that is entered by user
 						type: $("#def-logtype").val()
 				};
 				var postData = { definition: def };
@@ -21,9 +22,9 @@ $(function() {
 		      	define.done(function(data) {
 		      		console.log(data)
 	      			WorkoutLog.definition.userDefinitions.push(data.definition);
-	      			$("#def-description").val("");
+	      			$("#def-description").val(""); //the .val(''); is emptying the field out on the page after entering the info and submitting
 	      			$("def-logtype").val("");
-	      			$('a[href="#log"]').tab("show");
+	      			$('a[href="#log"]').tab("show");  //[]-here are saying this is a link with the a tag. allows us to go to the next tab on the page once info has been submitted. #log is the the id assianged to log page on index.html
 		      	});
 		  },
 

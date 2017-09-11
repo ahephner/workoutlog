@@ -4,12 +4,17 @@ $(function() {
          
             var username = $("#su_username").val();
             var password = $("#su_password").val();
-            var user = {user:  {username: username, password: password }};
+            var user = {
+               user:  {
+                  username: username, 
+                  password: password 
+               }};
 
             console.log(JSON.stringify(user))
 
             var signup = $.ajax({
                type: "POST", 
+               //sending it to WorkoutLog.API_Base = User on the serverside which is user.js
                url: WorkoutLog.API_BASE + "user", 
                data: JSON.stringify(user), 
                contentType: "application/json"
@@ -82,7 +87,7 @@ $(function() {
       }
    });
 
-   // bind events
+   // bind events this are our button functions
    $("#login").on("click", WorkoutLog.login);
    $("#signup").on("click", WorkoutLog.signup);
    $("#loginout").on("click", WorkoutLog.loginout);
